@@ -1,0 +1,67 @@
+<div [hidden]="!isOpen" class="small-chat-box fadeInRight animated">
+    <div class="heading" draggable="true">
+        <small class="chat-date pull-right">
+            02.19.2015
+        </small> Small chat
+    </div>
+
+    <div class="content">
+        <div class="left" *ngFor="let item of chatList">
+            <div class="author-name">{{item.author}}<small class="chat-date"> {{item.time | date: 'dd/MM/yyyy'}}</small></div>
+            <div class="chat-message active">{{item.message}}</div>
+        </div>
+
+        <!--<div class="left">
+            <div class="author-name">
+                Monica Jackson <small class="chat-date">10:02 am</small>
+            </div>
+            <div class="chat-message active">
+                Lorem Ipsum is simply dummy text input.
+            </div>
+
+        </div>
+        <div class="right">
+            <div class="author-name">
+                Mick Smith<small class="chat-date">11:24 am</small>
+            </div>
+            <div class="chat-message">
+                Lorem Ipsum is simpl.
+            </div>
+        </div>
+        <div class="left">
+            <div class="author-name">
+                Alice Novak<small class="chat-date">08:45 pm</small>
+            </div>
+            <div class="chat-message active">
+                Check this stock char.
+            </div>
+        </div>
+        <div class="right">
+            <div class="author-name">
+                Anna Lamson<small class="chat-date">11:24 am</small>
+            </div>
+            <div class="chat-message">
+                The standard chunk of Lorem Ipsum
+            </div>
+        </div>-->
+    </div>
+    <div class="form-chat">
+        <div class="input-group input-group-sm">
+            <input type="text" class="form-control">
+            <span class="input-group-btn"> <button
+                class="btn btn-primary" type="button">...
+        </button> </span></div>
+    </div>
+
+</div>
+<div id="small-chat">
+    <span class="badge badge-warning pull-right">{{chatList.length}}</span>
+    <a class="open-small-chat" (click)="isOpen=!isOpen">
+        <span  [hidden]="isOpen" >
+            <i class="fa fa-comments"></i>        
+        </span>
+        <span  [hidden]="!isOpen" >
+            <i class="fa fa-times"></i>
+        </span>
+    </a>    
+</div>
